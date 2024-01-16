@@ -1,44 +1,924 @@
 <!doctype html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Permanuts</title>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Reparonow</title>
+
+    <link rel="stylesheet" href="./assets/fontawesome/css/all.min.css" />
 
     <link rel="stylesheet" href="./assets/css/main.css" />
     <link rel="stylesheet" href="./assets/css/custom.css" />
-</head>
-<body>
-    <header class="px-4">
-        <div class="container mx-auto py-4 px-4">
-            <div class="flex items-center justify-between">
-                <a href="#">
-                    <img src="./assets/img/logo-full.svg" alt="Permanuts" class="max-w-[200px]" />
+  </head>
+  <body class="bg-body-default">
+    <header
+      data-nav
+      class="fixed left-0 right-0 top-0 z-50 bg-white p-5 transition-all lg:border-b lg:border-primary-300"
+    >
+      <div class="container mx-auto lg:px-4 xl:max-w-7xl">
+        <div
+          class="relative flex items-center justify-center lg:justify-between"
+        >
+          <div class="order-2 lg:order-1">
+            <a
+              href="#inicio"
+              class="flex items-center justify-center"
+              data-logo
+            >
+              <img src="./assets/img/logo.svg" alt="" />
+            </a>
+          </div>
+          <nav class="hidden lg:order-2 lg:block">
+            <ul class="flex items-center gap-10">
+              <li>
+                <a
+                  href="#inicio"
+                  class="group relative flex flex-col items-center justify-center text-lg text-text-400 transition"
+                >
+                  <span class="group-hover:text-primary-300">Home</span>
+                  <i
+                    class="fa-solid fa-caret-down absolute top-full text-xs text-primary-400 opacity-0 group-hover:opacity-100"
+                  ></i>
                 </a>
-
-                <nav>
-                    <ul class="flex items-center gap-3">
-                        <li>
-                            <a href="#">Mission</a>
-                        </li>
-                        <li>•</li>
-                        <li>
-                            <a href="#">Products</a>
-                        </li>
-                        <li>•</li>
-                        <li>
-                            <a href="#">Commitments</a>
-                        </li>
-                        <li>•</li>
-                        <li>
-                            <a href="#">Contact</a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
+              </li>
+              <li>
+                <a
+                  href="#quem-somos"
+                  class="group relative flex flex-col items-center justify-center text-lg text-text-400 transition"
+                >
+                  <span class="group-hover:text-primary-300">Quem Somos</span>
+                  <i
+                    class="fa-solid fa-caret-down absolute top-full text-xs text-primary-400 opacity-0 group-hover:opacity-100"
+                  ></i>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#pilares"
+                  class="group relative flex flex-col items-center justify-center text-lg text-text-400 transition"
+                >
+                  <span class="group-hover:text-primary-300">Pilares</span>
+                  <i
+                    class="fa-solid fa-caret-down absolute top-full text-xs text-primary-400 opacity-0 group-hover:opacity-100"
+                  ></i>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#vantagens"
+                  class="group relative flex flex-col items-center justify-center text-lg text-text-400 transition"
+                >
+                  <span class="group-hover:text-primary-300">Vantagens</span>
+                  <i
+                    class="fa-solid fa-caret-down absolute top-full text-xs text-primary-400 opacity-0 group-hover:opacity-100"
+                  ></i>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#etapas"
+                  class="group relative flex flex-col items-center justify-center text-lg text-text-400 transition"
+                >
+                  <span class="group-hover:text-primary-300">Etapas</span>
+                  <i
+                    class="fa-solid fa-caret-down absolute top-full text-xs text-primary-400 opacity-0 group-hover:opacity-100"
+                  ></i>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#contato"
+                  class="group relative flex flex-col items-center justify-center text-lg text-text-400 transition"
+                >
+                  <span class="group-hover:text-primary-300">Contato</span>
+                  <i
+                    class="fa-solid fa-caret-down absolute top-full text-xs text-primary-400 opacity-0 group-hover:opacity-100"
+                  ></i>
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <button
+            class="button-open-side absolute left-0 order-1 lg:static lg:order-2"
+            type="button"
+            data-open-side
+          >
+            <span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+          </button>
         </div>
+      </div>
+
+      <div class="sidebar-header relative" data-menu-side>
+        <button
+          type="button"
+          data-close-side
+          class="close-side pointer-events-none fixed right-5 top-5 z-50 hidden h-[51px] w-[51px] rounded-full border border-primary-300 opacity-0 transition-all duration-[0.3s] lg:block"
+        >
+          <i class="fa-solid fa-xmark text-2xl text-primary-300"></i>
+        </button>
+        <div
+          class="content-sidebar fixed bottom-0 left-0 top-0 z-40 w-[300px] overflow-y-auto border-r border-[#141414] bg-white transition-all duration-[0.4s] lg:left-[unset] lg:right-0 lg:w-[450px] lg:border-r-0 lg:p-5"
+          data-sidebar
+        >
+          <button
+            type="button"
+            data-close-side
+            class="close-side pointer-events-none fixed right-5 top-5 z-50 h-[40px] w-[40px] rounded-full border border-primary-300 opacity-0 transition-all duration-[0.3s] lg:hidden"
+          >
+            <i class="fa-solid fa-xmark text-xl text-primary-300"></i>
+          </button>
+          <div class="p-5">
+            <a href="#inicio">
+              <img
+                src="./assets/img/logo.svg"
+                alt="Logo"
+                class="mx-auto max-w-[100px]"
+              />
+            </a>
+            <h4 class="tex-lg text-secondary-500 pt-8 font-extrabold lg:pt-20">
+              Seja muito bem-vindo, <br />
+              em que podemos ajudar você?
+            </h4>
+
+            <div class="pt-10 lg:hidden">
+              <ul class="flex flex-col gap-2">
+                <li>
+                  <a
+                    href="#inicio"
+                    class="text-primary-500 flex items-center justify-between text-lg"
+                  >
+                    Home
+
+                    <i
+                      class="fa-solid fa-angle-right text-primary-500 px-4"
+                    ></i>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#quem-somos"
+                    class="text-primary-500 flex items-center justify-between text-lg"
+                  >
+                    Quem Somos
+
+                    <i
+                      class="fa-solid fa-angle-right text-primary-500 px-4"
+                    ></i>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#pilares"
+                    class="text-primary-500 flex items-center justify-between text-lg"
+                  >
+                    Pilares
+
+                    <i
+                      class="fa-solid fa-angle-right text-primary-500 px-4"
+                    ></i>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#vantagens"
+                    class="text-primary-500 flex items-center justify-between text-lg"
+                  >
+                    Vantagens
+
+                    <i
+                      class="fa-solid fa-angle-right text-primary-500 px-4"
+                    ></i>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#etapas"
+                    class="text-primary-500 flex items-center justify-between text-lg"
+                  >
+                    Etapas
+
+                    <i
+                      class="fa-solid fa-angle-right text-primary-500 px-4"
+                    ></i>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#contato"
+                    class="text-primary-500 flex items-center justify-between text-lg"
+                  >
+                    Contato
+
+                    <i
+                      class="fa-solid fa-angle-right text-primary-500 px-4"
+                    ></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="py-20">
+              <h4 class="pb-5 text-lg font-bold text-black">
+                ENTRE EM CONTATO
+              </h4>
+              <div class="flex flex-col gap-5">
+                <a href="#" class="inline-flex items-center gap-2">
+                  <i class="fa-solid fa-phone text-secondary-500"></i>
+                  <p class="text-lg font-extrabold text-text-500">
+                    <span class="font-normal">11 </span>5087.9526
+                  </p>
+                </a>
+                <a href="#" class="inline-flex items-center gap-2">
+                  <i class="fa-solid fa-envelope text-secondary-500"></i>
+                  <p class="text-text-500">comercial@2gather.com.br</p>
+                </a>
+                <div class="flex items-start gap-2">
+                  <i class="fa-solid fa-location-pin text-secondary-500"></i>
+
+                  <p class="text-text-500">
+                    Rua Machado Bitencourt 190 - CJ 407<br />
+                    Vila Clementino, - São Paulo - SP<br />
+                    CEP: 04044-903
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <h4 class="pb-5 text-lg font-extrabold uppercase text-black">
+                Redes sociais
+              </h4>
+              <ul class="flex items-center gap-3">
+                <li>
+                  <a
+                    href="#"
+                    class="bg-gray2-400 group inline-flex h-9 w-9 items-center justify-center rounded-full"
+                  >
+                    <i
+                      class="fa-brands fa-facebook-f text-text-300 text-2xl transition group-hover:text-white"
+                    ></i>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="bg-gray2-400 group inline-flex h-9 w-9 items-center justify-center rounded-full"
+                  >
+                    <i
+                      class="fa-brands fa-instagram text-text-300 text-2xl transition group-hover:text-white"
+                    ></i>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="bg-gray2-400 group inline-flex h-9 w-9 items-center justify-center rounded-full"
+                  >
+                    <i
+                      class="fa-brands fa-linkedin-in text-text-300 text-2xl transition group-hover:text-white"
+                    ></i>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="bg-gray2-400 group inline-flex h-9 w-9 items-center justify-center rounded-full"
+                  >
+                    <i
+                      class="fa-brands fa-pinterest-p text-text-300 text-2xl transition group-hover:text-white"
+                    ></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="pointer-events-none fixed inset-0 bg-black/60 opacity-0 transition-all duration-[0.3s]"
+          data-overlay
+        ></div>
+      </div>
     </header>
-</body>
+
+    <main id="inicio" class="relative overflow-hidden">
+      <img
+        src="./assets/img/bg-home.png"
+        class="absolute -right-[220px] -top-[150px] z-[-1] h-[140vh]"
+        alt=""
+      />
+
+      <section
+        id="quem-somos"
+        class="mx-auto min-h-screen max-w-4xl px-4"
+        style="padding-top: 160px"
+      >
+        <h1 class="text-center text-[2.3rem] font-black text-primary-300">
+          Quem Somos
+        </h1>
+        <p class="pb-16 text-center text-black">Lorem ipsum dolor sit amet</p>
+        <div class="flex flex-col gap-10 lg:flex-row">
+          <div class="w-full lg:w-1/2">
+            <img
+              src="./assets/img/quem-somos.png"
+              class="mx-auto"
+              alt="Quem Somos"
+            />
+          </div>
+          <div class="w-full lg:w-1/2">
+            <p class="pt-5 text-lg text-black lg:pt-10">
+              Nossa empresa oferece uma solução completa de Pós-vendas por i o
+              território nacional através de técnicos e postos avançados de
+              reparo especializados em eletroeletrônicos, linha branca e móveis.
+            </p>
+            <p class="py-5 text-lg text-black">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Pellentesque auctor condimentum augue, condimentum fermentum
+              sapien vehicula interdum.
+            </p>
+            <p class="text-lg text-black">
+              Aliquam scelerisque arcu eget mauris porta scelerisque. Praesent
+              et urna fringilla, fringilla nisi ut, porta lacus. Aliquam eget
+              turpis non nulla laoreet venenatis. Maecenas consequat in est
+              dictum auctor.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="pilares" class="mx-auto max-w-4xl px-4">
+        <h2 class="pt-10 text-center text-[2.3rem] font-black text-primary-300">
+          Pilares
+        </h2>
+        <p class="pb-16 text-center text-black">Lorem ipsum dolor sit amet</p>
+
+        <div class="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-20">
+          <div>
+            <div class="">
+              <img
+                src="./assets/img/sac.png"
+                class="h-full w-full object-cover"
+                alt="Sac"
+              />
+              <h3
+                class="py-4 text-center text-[2.3rem] font-bold italic text-black"
+              >
+                SAC
+              </h3>
+              <p class="text-lg text-black">
+                Times treinados para atender informações técnicas dos produtos e
+                direcionamento adequado para cada tipo de necessidade incluindo
+                voz e redes sociais.
+              </p>
+            </div>
+          </div>
+          <div>
+            <div class="">
+              <img
+                src="./assets/img/assitencia-tecnica.png"
+                class="h-full w-full object-cover"
+                alt="Sac"
+              />
+              <h3
+                class="py-4 text-center text-[2.3rem] font-bold italic text-black"
+              >
+                Assistência Técnica
+              </h3>
+              <ul class="pl-8">
+                <li class="text-lg text-black">
+                  <span class="text-primary-200">•</span> Equipe especializada
+                </li>
+                <li>
+                  <span class="text-primary-200">•</span> Atendimento domiciliar
+                </li>
+                <li>
+                  <span class="text-primary-200">•</span> Atendimento balcão
+                </li>
+                <li>
+                  <span class="text-primary-200">•</span> Gestão e
+                  credenciamento de ATs
+                </li>
+                <li>
+                  <span class="text-primary-200">•</span> Controle de peças e
+                  equipamentos
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <div class="">
+              <img
+                src="./assets/img/triagem-reparo.png"
+                class="h-full w-full object-cover"
+                alt="Sac"
+              />
+              <h3
+                class="py-4 text-center text-[2.3rem] font-bold italic text-black"
+              >
+                Triagem & Reparo
+              </h3>
+              <ul class="pl-8">
+                <li class="text-lg text-black">
+                  <span class="text-primary-200">•</span> Varejo e Distribuidor
+                </li>
+                <li><span class="text-primary-200">•</span> Fabricante</li>
+                <li>
+                  <span class="text-primary-200">•</span> Laboratório integrado
+                  com Operador logístico em Guarulhos/SP
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <div class="">
+              <img
+                src="./assets/img/triagem-reparo.png"
+                class="h-full w-full object-cover"
+                alt="Sac"
+              />
+              <h3
+                class="py-4 text-center text-[2.3rem] font-bold italic text-black"
+              >
+                Logística
+              </h3>
+              <ul class="pl-8">
+                <li class="text-lg text-black">
+                  <span class="text-primary-200">•</span> Armazenagem
+                </li>
+                <li>
+                  <span class="text-primary-200">•</span> Envio de peças e
+                  produtos
+                </li>
+                <li>
+                  <span class="text-primary-200">•</span> Logística reversa
+                </li>
+                <li>
+                  <span class="text-primary-200">•</span> Descarte adequado de
+                  materiais
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="vantagens" class="mx-auto max-w-7xl px-4">
+        <h2
+          class="pt-10 text-center text-[2.3rem] font-black text-primary-300 lg:pt-[150px]"
+        >
+          Vantagens
+        </h2>
+        <p class="pb-16 text-center text-black">de nosso processo</p>
+        <div class="grid grid-cols-1 gap-10 lg:grid-cols-3">
+          <div>
+            <h5 class="pb-5 text-lg font-black text-black">Consultoria</h5>
+            <p class="text-lg text-black">
+              Oferecemos aos nossos clientes mapeamento e acompanhamento de
+              processos logísticos e fiscais de acordo com a legislação de cada
+              produto/estado.
+            </p>
+          </div>
+          <div>
+            <h5 class="pb-5 text-lg font-black text-black">
+              Gestão de Inventário
+            </h5>
+            <p class="text-lg text-black">
+              Nossa equipe está preparada para gerir sistematicamente o
+              inventário de produtos acabados ou peças para reparo de nossos
+              parceiros logísticos por todo o Brasil.
+            </p>
+          </div>
+          <div>
+            <h5 class="pb-5 text-lg font-black text-black">Acompanhamento</h5>
+            <p class="text-lg text-black">
+              Utilizamos ferramentas-chave para informar sobre o andamento de
+              sua operação em tempo real além de oferecer follow-up semanais.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="etapas" class="mx-auto max-w-7xl px-4 py-10 lg:py-[150px]">
+        <h2 class="text-center text-[2.3rem] font-black text-primary-300">
+          Etapas
+        </h2>
+        <p class="pb-16 text-center text-black">Lorem ipsum dolor sit amet</p>
+        <div class="grid grid-cols-1 gap-10 lg:grid-cols-4">
+          <div
+            class="group border border-[#2b2b2b] px-5 py-10 transition-all hover:border-primary-300"
+          >
+            <img src="./assets/img/diagnostico.png" alt="Diagnostico" />
+            <h5 class="pb-5 pt-3 text-xl font-extrabold">Diagnótico</h5>
+            <p class="pb-5 text-lg text-black lg:h-[155px]">
+              Compreendemos o cenário atual e definimos os resultados esperados.
+            </p>
+            <a
+              href="#"
+              class="inline-flex items-center gap-2 border border-black px-4 py-2 text-black transition-all hover:border-primary-300 hover:bg-primary-300 hover:text-white"
+              ><span class="font-extrabold"> Veja Mais </span>
+              <i
+                class="fa-solid fa-arrow-right fa-rotate-by"
+                style="--fa-rotate-angle: -45deg"
+              ></i
+            ></a>
+          </div>
+          <div
+            class="group border border-[#2b2b2b] px-5 py-10 transition-all hover:border-primary-300"
+          >
+            <img src="./assets/img/solucao.png" alt="Diagnostico" />
+            <h5 class="pb-5 pt-3 text-xl font-extrabold">Solução</h5>
+            <p class="pb-5 text-lg text-black lg:h-[155px]">
+              Desenvolvemos uma solução customizada utilizando as ferramentas
+              mais adequadas de cada área.
+            </p>
+            <a
+              href="#"
+              class="inline-flex items-center gap-2 border border-black px-4 py-2 text-black transition-all hover:border-primary-300 hover:bg-primary-300 hover:text-white"
+              ><span class="font-extrabold"> Veja Mais </span>
+              <i
+                class="fa-solid fa-arrow-right fa-rotate-by"
+                style="--fa-rotate-angle: -45deg"
+              ></i
+            ></a>
+          </div>
+          <div
+            class="group border border-[#2b2b2b] px-5 py-10 transition-all hover:border-primary-300"
+          >
+            <img src="./assets/img/proposta.png" alt="Diagnostico" />
+            <h5 class="pb-5 pt-3 text-xl font-extrabold">Proposta</h5>
+            <p class="pb-5 text-lg text-black lg:h-[155px]">
+              Validada a solução, fazemos o orçamento e cronograma de projeto e
+              operação.
+            </p>
+            <a
+              href="#"
+              class="inline-flex items-center gap-2 border border-black px-4 py-2 text-black transition-all hover:border-primary-300 hover:bg-primary-300 hover:text-white"
+              ><span class="font-extrabold"> Veja Mais </span>
+              <i
+                class="fa-solid fa-arrow-right fa-rotate-by"
+                style="--fa-rotate-angle: -45deg"
+              ></i
+            ></a>
+          </div>
+          <div
+            class="group border border-[#2b2b2b] px-5 py-10 transition-all hover:border-primary-300"
+          >
+            <img src="./assets/img/implantacao.png" alt="Diagnostico" />
+            <h5 class="pb-5 pt-3 text-xl font-extrabold">Implantação</h5>
+            <p class="pb-5 text-lg text-black lg:h-[155px]">
+              Execução e monitoramento com parceria na gestão integrada entre
+              cliente, reparonow e fornecedores.
+            </p>
+            <a
+              href="#"
+              class="inline-flex items-center gap-2 border border-black px-4 py-2 text-black transition-all hover:border-primary-300 hover:bg-primary-300 hover:text-white"
+              ><span class="font-extrabold"> Veja Mais </span>
+              <i
+                class="fa-solid fa-arrow-right fa-rotate-by"
+                style="--fa-rotate-angle: -45deg"
+              ></i
+            ></a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="contato">
+      <footer data-nav class="hidden bg-[#f2f2f3] lg:block">
+        <div class="bg-footer py-10">
+          <div class="mx-auto max-w-7xl px-4">
+            <div class="flex flex-col items-start gap-8 lg:flex-row">
+              <div class="w-full lg:w-1/2">
+                <div class="flex items-start gap-10">
+                  <a href="#inicio" class="hidden lg:inline-block">
+                    <img src="./assets/img/logo.svg" alt="" class="pb-5" />
+                  </a>
+                  <div>
+                    <p class="pb-5 text-lg font-extrabold text-black">
+                      ENTRE EM CONTATO
+                    </p>
+                    <div class="flex flex-col gap-5">
+                      <a href="#" class="inline-flex items-center gap-2">
+                        <i class="fa-solid fa-phone text-primary-300"></i>
+                        <p class="text-lg font-extrabold text-text-500">
+                          <span class="font-normal">11 </span>5087.9526
+                        </p>
+                      </a>
+                      <a href="#" class="inline-flex items-center gap-2">
+                        <i class="fa-solid fa-envelope text-primary-300"></i>
+                        <p class="text-text-500">comercial@2gather.com.br</p>
+                      </a>
+                      <div class="flex items-start gap-2">
+                        <i
+                          class="fa-solid fa-location-pin text-primary-300"
+                        ></i>
+
+                        <p class="text-text-500">
+                          Rua Machado Bitencourt 190 - CJ 407<br />
+                          Vila Clementino, - São Paulo - SP<br />
+                          CEP: 04044-903
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="lg:w-1/3">
+                <h4 class="pb-5 text-lg font-extrabold text-black">MENU</h4>
+                <ul class="flex flex-col gap-2">
+                  <li>
+                    <a
+                      href="#inicio"
+                      class="group relative text-lg text-black hover:text-primary-300"
+                      >Home
+
+                      <i
+                        class="fa-solid fa-caret-down text-primary-500 absolute bottom-full left-0 right-0 flex items-center justify-center text-xs text-primary-300 opacity-0 group-hover:opacity-100"
+                      ></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#quem-somos"
+                      class="group relative text-lg text-black hover:text-primary-300"
+                      >Quem Somos
+
+                      <i
+                        class="fa-solid fa-caret-down text-primary-500 absolute bottom-full left-0 right-0 flex items-center justify-center text-xs text-primary-300 opacity-0 group-hover:opacity-100"
+                      ></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#pilares"
+                      class="group relative text-lg text-black hover:text-primary-300"
+                      >Pilares
+
+                      <i
+                        class="fa-solid fa-caret-down text-primary-500 absolute bottom-full left-0 right-0 flex items-center justify-center text-xs text-primary-300 opacity-0 group-hover:opacity-100"
+                      ></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#vantagens"
+                      class="group relative text-lg text-black hover:text-primary-300"
+                      >Vantagens
+
+                      <i
+                        class="fa-solid fa-caret-down text-primary-500 absolute bottom-full left-0 right-0 flex items-center justify-center text-xs text-primary-300 opacity-0 group-hover:opacity-100"
+                      ></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#etapas"
+                      class="group relative text-lg text-black hover:text-primary-300"
+                      >Etapas
+
+                      <i
+                        class="fa-solid fa-caret-down text-primary-500 absolute bottom-full left-0 right-0 flex items-center justify-center text-xs text-primary-300 opacity-0 group-hover:opacity-100"
+                      ></i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="lg:w-1/6">
+                <h4 class="pb-5 text-lg font-extrabold text-black">
+                  REDES SOCIAIS
+                </h4>
+                <ul class="flex items-center gap-3">
+                  <li>
+                    <a
+                      href="#"
+                      class="group inline-flex h-9 w-9 items-center justify-center rounded-full bg-[#e5e5e7] hover:bg-primary-300"
+                    >
+                      <i
+                        class="fa-brands fa-facebook-f text-text-300 text-2xl transition group-hover:text-white"
+                      ></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="group inline-flex h-9 w-9 items-center justify-center rounded-full bg-[#e5e5e7] hover:bg-primary-300"
+                    >
+                      <i
+                        class="fa-brands fa-instagram text-text-300 text-2xl transition group-hover:text-white"
+                      ></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="group inline-flex h-9 w-9 items-center justify-center rounded-full bg-[#e5e5e7] hover:bg-primary-300"
+                    >
+                      <i
+                        class="fa-brands fa-linkedin-in text-text-300 text-2xl transition group-hover:text-white"
+                      ></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="group inline-flex h-9 w-9 items-center justify-center rounded-full bg-[#e5e5e7] hover:bg-primary-300"
+                    >
+                      <i
+                        class="fa-brands fa-pinterest-p text-text-300 text-2xl transition group-hover:text-white"
+                      ></i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white">
+          <div class="container mx-auto px-4 py-6 xl:max-w-7xl">
+            <div class="flex items-center justify-between">
+              <p class="text-black">
+                Copyright © 2023 Reparonow. Todos os direitos reservados.
+              </p>
+              <a href="#" class="flex items-start gap-2">
+                <p class="text-xs text-black">Desenvolvidor por</p>
+                <img src="./assets/img/binden.png" alt="Binden" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      <footer data-nav class="bg-[#f2f2f3] lg:hidden">
+        <div class="bg-footer-mobile pb-10 pt-8">
+          <div class="container mx-auto px-4">
+            <p class="pb-5 text-lg font-extrabold text-black">
+              ENTRE EM CONTATO
+            </p>
+            <div class="flex flex-col gap-5">
+              <a href="#" class="inline-flex items-center gap-2">
+                <i class="fa-solid fa-phone text-secondary-500"></i>
+                <p class="text-lg font-extrabold text-text-500">
+                  <span class="font-normal">11 </span>5087.9526
+                </p>
+              </a>
+              <a href="#" class="inline-flex items-center gap-2">
+                <i class="fa-solid fa-envelope text-secondary-500"></i>
+                <p class="text-text-500">comercial@2gather.com.br</p>
+              </a>
+              <div class="flex items-start gap-2">
+                <i class="fa-solid fa-location-pin text-secondary-500"></i>
+
+                <p class="text-text-500">
+                  Rua Machado Bitencourt 190 - CJ 407<br />
+                  Vila Clementino, - São Paulo - SP<br />
+                  CEP: 04044-903
+                </p>
+              </div>
+            </div>
+
+            <div>
+              <h4 class="pb-8 pt-12 text-lg font-extrabold text-black">MENU</h4>
+              <ul class="flex flex-col gap-2">
+                <li>
+                  <a
+                    href="#inicio"
+                    class="flex items-center justify-between text-lg text-black"
+                  >
+                    Home
+                    <i
+                      class="fa-solid fa-angle-right text-primary-500 px-4"
+                    ></i>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#quem-somos"
+                    class="flex items-center justify-between text-lg text-black"
+                  >
+                    Quem Somos
+                    <i
+                      class="fa-solid fa-angle-right text-primary-500 px-4"
+                    ></i>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#pilares"
+                    class="flex items-center justify-between text-lg text-black"
+                  >
+                    Pilares
+                    <i
+                      class="fa-solid fa-angle-right text-primary-500 px-4"
+                    ></i>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#vantagens"
+                    class="flex items-center justify-between text-lg text-black"
+                  >
+                    Vantagens
+                    <i
+                      class="fa-solid fa-angle-right text-primary-500 px-4"
+                    ></i>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#etapas"
+                    class="flex items-center justify-between text-lg text-black"
+                  >
+                    Etapas
+                    <i
+                      class="fa-solid fa-angle-right text-primary-500 px-4"
+                    ></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="pt-12">
+              <h4 class="pb-5 text-lg font-extrabold text-black">
+                REDES SOCIAIS
+              </h4>
+              <ul class="flex items-center gap-3">
+                <li>
+                  <a
+                    href="#"
+                    class="bg-gray2-400 group inline-flex h-9 w-9 items-center justify-center rounded-full"
+                  >
+                    <i
+                      class="fa-brands fa-facebook-f text-text-300 text-2xl transition group-hover:text-white"
+                    ></i>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="bg-gray2-400 group inline-flex h-9 w-9 items-center justify-center rounded-full"
+                  >
+                    <i
+                      class="fa-brands fa-instagram text-text-300 text-2xl transition group-hover:text-white"
+                    ></i>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="bg-gray2-400 group inline-flex h-9 w-9 items-center justify-center rounded-full"
+                  >
+                    <i
+                      class="fa-brands fa-linkedin-in text-text-300 text-2xl transition group-hover:text-white"
+                    ></i>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="bg-gray2-400 group inline-flex h-9 w-9 items-center justify-center rounded-full"
+                  >
+                    <i
+                      class="fa-brands fa-pinterest-p text-text-300 text-2xl transition group-hover:text-white"
+                    ></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white">
+          <div class="container mx-auto px-4 py-6 xl:max-w-7xl">
+            <div
+              class="flex flex-col items-center justify-center gap-6 text-center"
+            >
+              <p class="text-black">
+                Copyright © 2023 Reparonow. Todos os direitos reservados.
+              </p>
+              <a href="#" class="flex items-start gap-2">
+                <p class="text-xs text-black">Desenvolvidor por</p>
+                <img src="./assets/img/binden.png" alt="Binden" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+  <script src="./assets/js/custom.js"></script>
 </html>

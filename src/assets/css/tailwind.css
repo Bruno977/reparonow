@@ -1,3 +1,91 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  .button-open-side {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 2px solid currentColor;
+    border-radius: 50%;
+    color: #016bdb;
+  }
+  .button-open-side > span {
+    width: 18px;
+    height: 16px;
+    line-height: 0;
+    cursor: pointer;
+    position: relative;
+    text-align: left;
+    overflow: hidden;
+  }
+  .button-open-side > span span {
+    display: inline-block;
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    border-radius: 0;
+    background-color: currentColor;
+    color: inherit;
+    vertical-align: top;
+    transition: 0s ease-in-out;
+    border-radius: 3px;
+  }
+  .button-open-side:hover > span span {
+    transition: 0.3s ease-in-out;
+  }
+  .button-open-side > span span:nth-child(1) {
+    transform: translate(0, -7px);
+    width: calc(100% - 4px);
+  }
+  .button-open-side > span span:nth-child(2) {
+    transform: translate(0, 0);
+    width: calc(100% - 4px);
+  }
+  .button-open-side > span span:nth-child(3) {
+    transform: translate(0, 7px);
+  }
+  .button-open-side > span span:nth-child(4) {
+    transform: translate(0, 14px);
+  }
+  .button-open-side:hover > span span:nth-child(1) {
+    transform: translate(0, 0);
+  }
+  .button-open-side:hover > span span:nth-child(2) {
+    transform: translate(0, 7px);
+    width: 100%;
+  }
+  .button-open-side:hover > span span:nth-child(3) {
+    transform: translate(0, 14px);
+  }
+  .button-open-side:hover > span span:nth-child(4) {
+    transform: translate(0, 21px);
+  }
+
+  /* Sidebar */
+
+  @media screen and (min-width: 1024px) {
+    .sidebar-header .content-sidebar {
+      transform: translateX(100%);
+    }
+  }
+  @media screen and (max-width: 1024px) {
+    .sidebar-header .content-sidebar {
+      transform: translateX(-100%);
+    }
+  }
+  .sidebar-header.active .content-sidebar {
+    transform: translateX(0);
+  }
+  .sidebar-header.active .close-side {
+    opacity: 1;
+    pointer-events: initial;
+  }
+}

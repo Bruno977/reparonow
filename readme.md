@@ -1,11 +1,9 @@
-# Running Project
+# Rodar Projeto
 
-Run te command below to install dependencies:
+Execute o comando abaixo para instalar as dependências:
 
     npm install
 
-Then run the command
+Em seguida, execute o comando:
     
     npm run dev
-
-Open the project in your favorite editor and enjoy Tailwind CSS in your HTML project.
